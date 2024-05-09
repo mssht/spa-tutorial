@@ -1,7 +1,4 @@
 //import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 import {Router} from './core/router.js'
 import {RootComponent} from './components/RootComponent.js'
 import {GameComponent} from './components/GameComponent.js'
