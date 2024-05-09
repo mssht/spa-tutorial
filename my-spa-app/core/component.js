@@ -33,7 +33,7 @@ export class Component {
 	static createElementFromHTML(html, containerTag) {
 		let new_element = document.createElement(containerTag);
 		new_element.innerHTML = html.trim();
-		// first_element = new_element.firstChild;だったけど、全部入れたくないか？
+		// first_element = new_element.firstChild;だと最初の要素のみしか追加されない。
 		let first_element = new_element;
 		if (first_element instanceof HTMLElement) {
 			return first_element;
