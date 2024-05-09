@@ -9,11 +9,12 @@ let router = new Router(document.body, [
 	{
 		path: "/",
 		component: RootComponent,
-		store: {}
+		store: {
+			hoge: "taro"
+		}
 	}
 ]);
 
-console.log(location.pathname);
 router.gonextPage(location.pathname);
 
 //document.querySelector('#app').innerHTML = `

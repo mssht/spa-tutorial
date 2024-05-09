@@ -1,8 +1,8 @@
 import {Component} from '../core/component.js'
 
 export class RootComponent extends Component {
-	constructor() {
-		super();
+	constructor(router, parameters, store) {
+		super(router, parameters, store);
 		this.gameStartButton = this.findElement('button.gameStart')
 		this.gameStartButton.onclick = e => this.onGameStartButtonClick();
 	}

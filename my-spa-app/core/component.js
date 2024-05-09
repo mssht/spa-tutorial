@@ -1,7 +1,8 @@
 export class Component {
-	constructor() {
-		this.store = null;
-		this.router = null;
+	constructor(router, parameters, store) {
+		this.router = router;
+		this.parameters = parameters;
+		this.store = store;
 		this.element = Component.createElementFromHTML(this.html, this.cotainerTag);
 		this.element.classList.add('component');
 	}
