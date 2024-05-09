@@ -7,7 +7,7 @@ export class RootComponent extends Component {
 		this.gameStartButton.onclick = e => this.onGameStartButtonClick();
 	}
 	onGameStartButtonClick() {
-		this.router.nextPage('/sample');
+		this.router.gonextPage('/game');
 	}
 	get html() {
 		return `

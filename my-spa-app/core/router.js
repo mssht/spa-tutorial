@@ -8,9 +8,9 @@ export class Router {
 		this.routingList = routingList;
 		window.addEventListener('popstate', (e) => {
 			if (e.state.depth < this.pageStack.length) {
-				this.onHistryBack();		
+				this.onHistoryBack();
 			} else {
-				this.onHistryForward(e.state);
+				this.onHistoryForward(e.state);
 			}
 		});
 	}
@@ -36,7 +36,7 @@ export class Router {
 		let component = new route.component(this, route.parameters, route.store);
 
 		if (0 < this.pageStack.length) {
-			this.getForegroundPage.element.parentNode.removeChild(this.foregroundPage.element);
+			this.getForegroundPage.element.parentNode.removeChild(this.getForegroundPage.element);
 		}
 
 		let data = {
@@ -65,15 +65,15 @@ export class Router {
 		currentPage.router = null;
 		currentPage.element.parentNode.removeChild(currentPage.element);
 
-		let page = this.foregroundPage;
+		let page = this.getForegroundPage;
 		this.rootElement.appendChild(page.element);
 		page.onEnterForeground();
 	}
 	
 	onHistoryForward(data) {
-		this.foregroundPage.element.parentNode.removeChild(this.foregroundPage.element);
+		this.getForegroundPage.element.parentNode.removeChild(this.getForegroundPage.element);
 
-		let route = this.getMatchRoute(data.path);
+		let route = this.searchRouteFromPath(data.path);
 		//TODO 組み込みエラーページができるまで何もしない。
 		if (route === null) {
 			console.log('Error: onHistoryForward: No such path entry.');
